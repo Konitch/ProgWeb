@@ -2,7 +2,7 @@
 
     Document   : atualizarDados
     Created on : 3 de jun. de 2025, 18:49:36
-    Author     : Leonardo Oliveira Moreira
+    Author     : dougl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

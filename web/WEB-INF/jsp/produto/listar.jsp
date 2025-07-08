@@ -1,7 +1,7 @@
 <%-- 
     Document   : listar
     Created on : 12 de jun. de 2025, 18:40:13
-    Author     : Leonardo Oliveira Moreira
+    Author     : dougl
 --%>
 
 <%@page import="modelo.pokemon.Pokemon"%>

@@ -1,0 +1,121 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/style.scss to edit this template
+*/
+/*
+    Created on : 8 de jul. de 2025, 11:22:44
+    Author     : dougl
+*/
+
+
+// Variáveis
+$primary-color: #3b82f6; // azul estilo botão
+$background-color: #1a1a1a;
+$text-color: #ffffff;
+$border-color: #ffffff40;
+
+// Reset simples
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: $background-color;
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  img {
+    width: 1.5rem;
+  }
+}
+
+.main-img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.caption {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.register {
+  background-color: transparent;
+  color: $text-color;
+  border: 1px solid $border-color;
+
+  &:hover {
+    background-color: #ffffff08;
+  }
+}
+
+.divider {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin: 0.5rem 0;
+}
+
+.google {
+  border: 1px solid $border-color;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  img {
+    width: 1.25rem;
+  }
+
+  &:hover {
+    background-color: #ffffff08;
+  }
+}
