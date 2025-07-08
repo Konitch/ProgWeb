@@ -11,8 +11,8 @@
 <h3>Cadastro de Produtos</h3>
 <form action="<%= request.getContextPath()%>/ListarProdutos" method="post">
     <div class="mb-3">
-        <label for="formControlDescricao" class="form-label">Descrição</label>
-        <input type="text" name="descricao" class="form-control" id="formControlDescricao" placeholder="Descrição">
+        <label for="formControlDescricao" class="form-label">Nome</label>
+        <input type="text" name="nome" class="form-control" id="formControlDescricao" placeholder="Nome">
     </div>
     <input class="btn btn-primary" type="submit" value="Procurar" />
     <a role="button" class="btn btn-primary" href="<%= request.getContextPath()%>/FormProduto">Inserir</a>
@@ -25,6 +25,7 @@
     <thead>
         <tr>
             <th scope="col">Id</th>
+            <th scope="col">Nome</th>
             <th scope="col">Descrição</th>
             <th scope="col">Preço</th>
             <th scope="col">Quantidade</th>
@@ -38,6 +39,7 @@
         %>
         <tr>
             <td class="align-middle"><%= p.getId()%></td>
+            <td class="align-middle"><%= p.getNome()%></td>
             <td class="align-middle"><%= p.getDescricao()%></td>
             <td class="align-middle"><%= p.getPreco()%></td>
             <td class="align-middle"><%= p.getQuantidade()%></td>

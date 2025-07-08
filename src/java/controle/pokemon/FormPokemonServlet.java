@@ -33,7 +33,7 @@ public class FormPokemonServlet extends HttpServlet {
             PokemonDAO pokemonDAO = new PokemonDAO();
             Pokemon pokemon = pokemonDAO.listar(id);
             if (pokemon != null) {
-                request.setAttribute("pokemons", pokemon);
+                request.setAttribute("pokemon", pokemon);
             }
         }
         RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/produto/form.jsp");

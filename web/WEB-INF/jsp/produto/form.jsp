@@ -41,7 +41,7 @@
             <%
                 for (int i = 0; tipos != null && i < tipos.size(); i++) {
                     Tipo c = tipos.get(i);
-                    if (pokemon != null && c.getId() == pokemon.getTipo_1().getId()) {
+                    if (pokemon != null && pokemon.getTipo_1() != null && c.getId() == pokemon.getTipo_1().getId()) {
             %>
             <option value="<%= c.getId() %>" selected><%= c.getNome() %></option>
             <%
