@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/index.html</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/script.js</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/index.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/acesso/InicioServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/modelo/tipo/TipoDAO.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/modelo/tipo/Tipo.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/modelo/pokemon/PokemonDAO.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/modelo/pokemon/Pokemon.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/config/Config.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/tipo/FormTipoServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/cliente/InserirClienteServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/modelo/cliente/ClienteDAO.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/acesso/LoginServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/pokemon/SalvarPokemonServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/pokemon/RemoverPokemonServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/pokemon/ListarPokemonServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/pokemon/FormPokemonServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/tipo/ListarTiposServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/tipo/RemoverTipoServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/tipo/SalvarTipoServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/cliente/VerClienteServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/cliente/RemoverClienteServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/modelo/cliente/Cliente.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/cliente/AtualizarClienteServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/src/java/controle/acesso/LogoutServlet.java</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/login.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/rodape.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/jsp/categoria/form.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/jsp/produto/form.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/cabecalho.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/jsp/categoria/listar.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/jsp/produto/listar.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/jsp/cabecalho.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/jsp/principal.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/jsp/rodape.jsp</file>
+            <file>file:/C:/Users/dougl/Documents/NetBeansProjects/ProgWeb/web/WEB-INF/jsp/atualizarDados.jsp</file>
+        </group>
+    </open-files>
+</project-private>
