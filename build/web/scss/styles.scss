@@ -3,119 +3,181 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/style.scss to edit this template
 */
 /*
-    Created on : 8 de jul. de 2025, 11:22:44
-    Author     : dougl
+    Atualizado em: 8 de julho de 2025
+    Autor: dougl
 */
 
-
-// Variáveis
-$primary-color: #3b82f6; // azul estilo botão
+// Variáveis de estilo
+$primary-color: #3b82f6;
 $background-color: #1a1a1a;
 $text-color: #ffffff;
-$border-color: #ffffff40;
+$muted-color: #999;
+$border-color: #333;
+$accent-color: #facc15;
 
-// Reset simples
+// Reset global
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   background-color: $background-color;
   color: $text-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
+// Containers
 .container {
-  background: $background-color;
+  padding: 1rem;
+  margin: 0 auto;
   width: 100%;
-  max-width: 400px;
-  padding: 1.5rem;
-  border-radius: 1rem;
+  max-width: 1140px;
+}
+
+// Navbar estilizada
+.navbar {
+  background-color: #111;
+  padding: 0.75rem 1rem;
+
+  .navbar-brand {
+    font-weight: bold;
+    color: $accent-color;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  .nav-link {
+    color: $text-color;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &.active {
+      color: $primary-color;
+      font-weight: bold;
+    }
+  }
+
+  .form-control {
+    background-color: #222;
+    border: 1px solid $border-color;
+    color: $text-color;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    max-width: 200px;
+
+    &::placeholder {
+      color: $muted-color;
+    }
+  }
+
+  .btn {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Links gerais
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $accent-color;
+  }
+}
+
+// Main
+main.container {
+  padding: 2rem 1rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: $muted-color;
+    margin-bottom: 2rem;
+  }
+}
+
+// Produtos
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .product-card {
+    background-color: #222;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: calc(50% - 0.5rem);
+    text-align: center;
+
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $muted-color;
+    }
+  }
+}
+
+// Rodapé
+.footer {
+  padding: 1rem 0;
   text-align: center;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  img {
-    width: 1.5rem;
-  }
-}
-
-.main-img {
-  width: 100%;
-  border-radius: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.caption {
+  color: $muted-color;
   font-size: 0.875rem;
-  margin-bottom: 1.5rem;
+  border-top: 1px solid $border-color;
+  margin-top: 2rem;
 }
 
-button {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 0.75rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.login {
-  background-color: $primary-color;
-  color: #fff;
-  border: none;
-
-  &:hover {
-    background-color: darken($primary-color, 10%);
-  }
-}
-
-.register {
-  background-color: transparent;
-  color: $text-color;
-  border: 1px solid $border-color;
-
-  &:hover {
-    background-color: #ffffff08;
-  }
-}
-
-.divider {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  opacity: 0.6;
-  margin: 0.5rem 0;
-}
-
-.google {
-  border: 1px solid $border-color;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  img {
-    width: 1.25rem;
+// Responsividade
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    text-align: center;
   }
 
-  &:hover {
-    background-color: #ffffff08;
+  .navbar .form-control {
+    max-width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .product-list .product-card {
+    width: 100%;
+  }
+
+  main.container {
+    text-align: center;
   }
 }
