@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pokeshop</title>
+        <link rel="icon" type="image/png" href="<%= request.getContextPath() %>/images/favicon.png" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles.css" />
@@ -18,10 +19,9 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.jsp">Pokeshop</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <a class="navbar-brand" href="index.jsp">
+                        <img src="<%= request.getContextPath() %>/images/logo.png" alt="Pokeshop" width="70" height="40" />
+                    </a>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -58,6 +58,8 @@
                 </div>
             </nav>
         </header>
+        <a href="<%= request.getContextPath() %>/index.jsp" style="margin-left: 1.5rem;">
+            <img src="<%= request.getContextPath() %>/images/seta.png" width="32px" height="32px" alt="Voltar"/></a>
         <main role="main" class="container">
             <%
                 String mensagem = (String) request.getAttribute("mensagem");

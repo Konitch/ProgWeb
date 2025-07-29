@@ -70,7 +70,7 @@ body {
     border: 1px solid $border-color;
     color: $text-color;
     border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     max-width: 200px;
 
     &::placeholder {
@@ -151,6 +151,65 @@ main.container {
   }
 }
 
+// Links gerais
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $accent-color;
+  }
+}
+
+// Main
+main.container {
+  padding: 2rem 1rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: $muted-color;
+    margin-bottom: 2rem;
+  }
+}
+
+// Produtos
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .product-card {
+    background-color: #222;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: calc(50% - 0.5rem);
+    text-align: center;
+
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $muted-color;
+    }
+  }
+}
+
 // Rodapé
 .footer {
   padding: 1rem 0;
@@ -165,12 +224,11 @@ main.container {
 @media (max-width: 768px) {
   .container {
     max-width: 100%;
-    text-align: center;
   }
 
   .navbar .form-control {
     max-width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 
   .product-list .product-card {
@@ -178,6 +236,8 @@ main.container {
   }
 
   main.container {
-    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
   }
+  
 }

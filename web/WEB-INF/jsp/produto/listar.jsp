@@ -8,14 +8,15 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../cabecalho.jsp" %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: transparent;">
 <h3>Cadastro de Produtos</h3>
 <form action="<%= request.getContextPath()%>/ListarProdutos" method="post">
     <div class="mb-3">
         <label for="formControlDescricao" class="form-label">Nome</label>
         <input type="text" name="nome" class="form-control" id="formControlDescricao" placeholder="Nome">
     </div>
-    <input class="btn btn-primary" type="submit" value="Procurar" />
-    <a role="button" class="btn btn-primary" href="<%= request.getContextPath()%>/FormProduto">Inserir</a>
+    <input class="btn btn-primary" type="submit" style="margin: 1rem 0rem; padding: 0.5rem 1rem;" value="Procurar" />
+    <a role="button" class="btn btn-primary" style="margin: 1rem 0rem; padding: 0.4rem 1rem;" href="<%= request.getContextPath()%>/FormProduto">Inserir</a>
 </form>
 <%
     List<Pokemon> pokemons = (List<Pokemon>) request.getAttribute("pokemons");
@@ -38,7 +39,7 @@
             for (Pokemon p : pokemons) {
         %>
         <tr>
-            <td class="align-middle"><%= p.getId()%></td>
+            <td class="align-middle" style="padding: 0.75rem 2rem;" ><%= p.getId()%></td>
             <td class="align-middle"><%= p.getNome()%></td>
             <td class="align-middle"><%= p.getDescricao()%></td>
             <td class="align-middle"><%= p.getPreco()%></td>
@@ -56,4 +57,5 @@
 <%
     }
 %>
+</nav>
 <%@include file="../rodape.jsp" %>

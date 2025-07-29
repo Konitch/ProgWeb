@@ -8,6 +8,7 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../cabecalho.jsp" %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: transparent;">
 <h3>Cadastro de Categorias</h3>
 <%    
     Tipo tipo = (Tipo) request.getAttribute("tipo");
@@ -20,9 +21,9 @@
     </div>
     <% } %>
     <div class="mb-3">
-        <label for="formControlDescricao" class="form-label">Descrição</label>
-        <input type="text" name="nome" class="form-control" id="formControlDescricao" placeholder="Descrição" value="<%= (tipo != null ? tipo.getNome() : "")%>">
+        <input type="text" name="nome" class="form-control" style="margin: 0.5rem 0rem;" id="formControlDescricao" placeholder="Descrição" value="<%= (tipo != null ? tipo.getNome() : "")%>">
     </div>
-    <input class="btn btn-primary" type="submit" value="Salvar" />
+    <input class="btn btn-primary" type="submit" style="margin-left: 0rem;" value="Salvar" />
 </form>
+</nav>
 <%@include file="../rodape.jsp" %>

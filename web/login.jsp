@@ -6,17 +6,18 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="cabecalho.jsp" %>
-<h3>Identificação do Usuário</h3>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: transparent;">
 <form action="<%= request.getContextPath()%>/Login" method="post">
     <div class="mb-3">
-        <label for="formControlLogin" class="form-label">Login</label>
-        <input type="text" name="login" class="form-control" id="formControlLogin" placeholder="Login" required>
+        <img src="<%= request.getContextPath() %>/images/perfil.png" width="40px" alt="login" height="40px" style="vertical-align: middle; display: inline-block;">
+        <input type="text" name="login" class="form-control" id="formControlLogin" placeholder="Nome de usuário/e-mail" required>
     </div>
     <div class="mb-3">
-        <label for="formControlSenha" class="form-label">Senha</label>
+        <img src="<%= request.getContextPath() %>/images/cadeado.png" width="25px" alt="senha" height="25px" style="vertical-align: middle; display: inline-block; margin: 0.5rem;">
         <input type="password" name="senha" class="form-control" id="formControlSenha" placeholder="Senha" required>
     </div>
-    <input class="btn btn-primary" type="submit" value="Entrar" />
-    <a class="btn btn-secondary" href="cadastrarCliente.jsp">Inserir novo cliente</a>
+    <input class="btn btn-primary" type="submit" style="margin-top: 2.5rem; margin-left: 0rem;" value="Entrar" />
+    <a href="cadastrarCliente.jsp">Inserir novo cliente</a>
 </form>
+</nav>
 <%@include file="rodape.jsp" %>

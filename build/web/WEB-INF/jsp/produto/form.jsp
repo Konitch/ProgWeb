@@ -9,6 +9,7 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../cabecalho.jsp" %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: transparent;">
 <h3>Cadastro de Produtos</h3>
 <%    
     Pokemon pokemon = (Pokemon) request.getAttribute("pokemon");
@@ -70,31 +71,32 @@
     </select>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" style="margin: 0.5rem;">
         <label for="formControlAvaliacao" class="form-label">Avaliação</label>
         <input type="text" name="avaliacao" class="form-control" id="formControlAvaliacao" placeholder="Avaliação" value="<%= (pokemon != null ? pokemon.getAvaliacao() : "") %>">
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" style="margin: 0.5rem;">
         <label for="formControlDescricao" class="form-label">Descrição</label>
         <input type="text" name="descricao" class="form-control" id="formControlDescricao" placeholder="Descrição" value="<%= (pokemon != null ? pokemon.getDescricao() : "") %>">
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" style="margin: 0.5rem;">
         <label for="formControlAltura" class="form-label">Altura</label>
         <input type="text" name="altura" class="form-control" id="formControlAltura" placeholder="Altura" value="<%= (pokemon != null ? pokemon.getAltura() : "") %>">
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" style="margin: 0.5rem;">
         <label for="formControlPeso" class="form-label">Peso</label>
         <input type="text" name="peso" class="form-control" id="formControlPeso" placeholder="Peso" value="<%= (pokemon != null ? pokemon.getPeso() : "") %>">
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" style="margin: 0.5rem;">
         <label class="form-label">Gênero</label><br/>
         <input type="checkbox" name="genero_m" value="true" <%= (pokemon != null && pokemon.getGenero_m() != null && pokemon.getGenero_m()) ? "checked" : "" %>> Masculino
         <input type="checkbox" name="genero_f" value="true" <%= (pokemon != null && pokemon.getGenero_f() != null && pokemon.getGenero_f()) ? "checked" : "" %>> Feminino
     </div>
     <input class="btn btn-primary" type="submit" value="Salvar" />
 </form>
+</nav>
 <%@include file="../rodape.jsp" %>
