@@ -23,4 +23,8 @@
 <%
     }
 %>
+
+<button onclick="emitirRecibo()">Finalizar Compra</button>
+<div id="reciboContainer" style="margin-top: 20px;"></div>
+
 <%@include file="rodape.jsp" %>
