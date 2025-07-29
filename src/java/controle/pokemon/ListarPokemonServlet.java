@@ -12,7 +12,7 @@ import modelo.pokemon.PokemonDAO;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para listar os produtos existentes
  */

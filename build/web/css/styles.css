@@ -12,6 +12,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/style.scss to edit thi
   box-sizing: border-box;
 }
 
+.nav-item {
+  position: relative;
+}
+.nav-item .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+.nav-item .dropdown-menu li a {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+}
+.nav-item .dropdown-menu li a:hover {
+  background-color: #eee;
+}
+
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
   background-color: #1a1a1a;

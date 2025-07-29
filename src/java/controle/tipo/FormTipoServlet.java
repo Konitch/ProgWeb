@@ -11,7 +11,7 @@ import modelo.tipo.TipoDAO;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para preparar o formulário para inserir uma nova categoria
  * ou atualizar uma categoria existente

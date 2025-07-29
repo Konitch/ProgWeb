@@ -14,7 +14,7 @@ import modelo.pokemon.PokemonDAO;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para preparar o formulário para inserir um novo produto ou
  * atualizar um produto existente

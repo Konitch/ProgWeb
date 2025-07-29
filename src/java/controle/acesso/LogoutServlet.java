@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para realizar o logout de um usuário
  */

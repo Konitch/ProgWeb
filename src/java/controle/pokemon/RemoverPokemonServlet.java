@@ -10,7 +10,7 @@ import modelo.pokemon.PokemonDAO;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para remover um produto existente
  */

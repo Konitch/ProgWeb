@@ -2,7 +2,7 @@ package modelo.tipo;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  * 
  * Classe que representa a entidade categoria
  */

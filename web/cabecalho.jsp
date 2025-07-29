@@ -16,17 +16,15 @@
         <link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles.css" />
     </head>
     <body>
-        <header>
+        <header style="background-color: #111; padding: 0.75rem 1rem;">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.jsp">
+                <div class="container-fluid" style="display: flex; align-items: center; justify-content: space-between;">
+                    <a class="navbar-brand" href="index.jsp" style="display: flex; align-items: center; text-decoration: none;">
                         <img src="<%= request.getContextPath() %>/images/logo.png" alt="Pokeshop" width="70" height="40" />
                     </a>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.jsp">Início</a>
-                            </li>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="display: flex; gap: 1.5rem; list-style: none; padding-left: 0;">
+
                             <li class="nav-item">
                                 <a class="nav-link" href="cadastrarCliente.jsp">Cadastre-se</a>
                             </li>
@@ -49,16 +47,18 @@
                                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                             </li>
                             -->
-                        </ul>
-                        <form class="d-flex" role="search">
+                            
+                        <!--<form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search"/>
                             <button class="btn btn-outline-success" type="submit">Procurar</button>
                         </form>
+                        -->
+                        </ul>
                     </div>
                 </div>
             </nav>
         </header>
-        <a href="<%= request.getContextPath() %>/index.jsp" style="margin-left: 1.5rem;">
+        <a href="<%= request.getContextPath() %>/Inicio" style="margin-left: 1.5rem;">
             <img src="<%= request.getContextPath() %>/images/seta.png" width="32px" height="32px" alt="Voltar"/></a>
         <main role="main" class="container">
             <%

@@ -10,7 +10,7 @@ import modelo.cliente.ClienteDAO;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para atualizar um usuário existente
  */

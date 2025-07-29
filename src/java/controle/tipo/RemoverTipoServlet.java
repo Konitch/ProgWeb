@@ -10,7 +10,7 @@ import modelo.tipo.TipoDAO;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para remover uma categoria existente
  */

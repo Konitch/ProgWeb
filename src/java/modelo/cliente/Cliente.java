@@ -2,7 +2,7 @@ package modelo.cliente;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  * 
  * Classe que representa a entidade usuário
  */

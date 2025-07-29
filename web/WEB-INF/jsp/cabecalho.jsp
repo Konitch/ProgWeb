@@ -24,18 +24,61 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles.css" />
     </head>
+    <style>
+/* Estilização do dropdown */
+.nav-item {
+  position: relative;
+}
+
+.nav-item .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.nav-item .dropdown-menu li a {
+  display: block;
+  padding: 8px 12px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.nav-item .dropdown-menu li a:hover {
+  background-color: #2a2a2a;
+}
+</style>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector('.dropdown-toggle');
+  const menu = document.querySelector('.dropdown-menu');
+
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+});
+</script>
     <body>
-        <header>
+        <header style="background-color: #111; padding: 0.75rem 1rem;">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.jsp">
+                <div class="container-fluid" style="display: flex; align-items: center; justify-content: space-between;">
+                    <a class="navbar-brand" href="index.jsp" style="display: flex; align-items: center; text-decoration: none;">
                         <img src="<%= request.getContextPath() %>/images/logo.png" alt="Pokeshop" width="70" height="40" />
                     </a>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Início</a>
-                            </li>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="display: flex; gap: 1.5rem; list-style: none; padding-left: 0;">
+
                             <li class="nav-item">
                                 <a class="nav-link" href="<%= request.getContextPath()%>/VerUsuario">Atualizar Dados</a>
                             </li>
@@ -62,7 +105,7 @@
                 </div>
             </nav>
         </header>
-        <a href="<%= request.getContextPath() %>/index.jsp" style="margin-left: 1.5rem;">
+        <a href="<%= request.getContextPath() %>/Inicio" style="margin-left: 1.5rem;">
             <img src="<%= request.getContextPath() %>/images/seta.png" width="32px" height="32px" alt="Voltar"/></a>
         <main role="main" class="container">
             <%

@@ -22,6 +22,34 @@ $accent-color: #facc15;
   box-sizing: border-box;
 }
 
+.nav-item {
+  position: relative;
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    z-index: 1000;
+
+    li {
+      a {
+        display: block;
+        padding: 8px 12px;
+        color: #333;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}
+
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   background-color: $background-color;

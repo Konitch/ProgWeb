@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  * 
  * Classe que implementa o padrão DAO para a entidade categoria
  */

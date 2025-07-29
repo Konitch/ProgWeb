@@ -4,7 +4,7 @@ import modelo.tipo.Tipo;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  * 
  * Classe que representa a entidade produto
  */

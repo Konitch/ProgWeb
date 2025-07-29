@@ -13,7 +13,7 @@ import modelo.cliente.ClienteDAO;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para realizar o login de um usuário
  */

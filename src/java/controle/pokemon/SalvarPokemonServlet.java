@@ -10,7 +10,7 @@ import modelo.pokemon.PokemonDAO;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para inserir um novo produto ou atualizar um produto
  * existente

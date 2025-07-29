@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  *
  * Classe de controle para chamar o formulário de alterar dados do usuário
  */

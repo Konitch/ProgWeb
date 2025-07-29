@@ -2,7 +2,7 @@ package config;
 
 /**
  *
- * @author Leonardo Oliveira Moreira
+ * @author dougl
  * 
  * Classe que contém as constantes de configuração da aplicação
  */
