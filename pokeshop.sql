@@ -5,7 +5,7 @@
 -- Dumped from database version 17.5
 -- Dumped by pg_dump version 17.5
 
--- Started on 2025-05-19 09:43:21
+-- Started on 2025-07-29 23:04:36
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -19,50 +19,35 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
---
--- TOC entry 4 (class 2615 OID 2200)
--- Name: public; Type: SCHEMA; Schema: -; Owner: pg_database_owner
---
-
-CREATE SCHEMA public;
-
-
-ALTER SCHEMA public OWNER TO pg_database_owner;
-
---
--- TOC entry 4935 (class 0 OID 0)
--- Dependencies: 4
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: pg_database_owner
---
-
-COMMENT ON SCHEMA public IS 'standard public schema';
-
-
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
--- TOC entry 222 (class 1259 OID 16417)
+-- TOC entry 221 (class 1259 OID 16417)
 -- Name: cliente; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.cliente (
-    id bigint NOT NULL,
     nome character varying,
     endereco character varying,
-    cpf character varying
+    cpf character varying,
+    id bigint NOT NULL,
+    admin boolean,
+    email character varying,
+    login character varying,
+    senha character varying
 );
 
 
 ALTER TABLE public.cliente OWNER TO postgres;
 
 --
--- TOC entry 221 (class 1259 OID 16416)
--- Name: client_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- TOC entry 228 (class 1259 OID 16452)
+-- Name: cliente_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.client_id_seq
+CREATE SEQUENCE public.cliente_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -70,15 +55,15 @@ CREATE SEQUENCE public.client_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.client_id_seq OWNER TO postgres;
+ALTER SEQUENCE public.cliente_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4936 (class 0 OID 0)
--- Dependencies: 221
--- Name: client_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- TOC entry 4957 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: cliente_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public.client_id_seq OWNED BY public.cliente.id;
+ALTER SEQUENCE public.cliente_id_seq OWNED BY public.cliente.id;
 
 
 --
@@ -113,7 +98,7 @@ CREATE SEQUENCE public.comentario_poke_id_seq
 ALTER SEQUENCE public.comentario_poke_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4937 (class 0 OID 0)
+-- TOC entry 4958 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: comentario_poke_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -122,7 +107,7 @@ ALTER SEQUENCE public.comentario_poke_id_seq OWNED BY public.comentario_poke.id;
 
 
 --
--- TOC entry 226 (class 1259 OID 16435)
+-- TOC entry 225 (class 1259 OID 16435)
 -- Name: comentario_publi; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -137,7 +122,7 @@ CREATE TABLE public.comentario_publi (
 ALTER TABLE public.comentario_publi OWNER TO postgres;
 
 --
--- TOC entry 225 (class 1259 OID 16434)
+-- TOC entry 224 (class 1259 OID 16434)
 -- Name: comentario_publi_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -152,8 +137,8 @@ CREATE SEQUENCE public.comentario_publi_id_seq
 ALTER SEQUENCE public.comentario_publi_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4938 (class 0 OID 0)
--- Dependencies: 225
+-- TOC entry 4959 (class 0 OID 0)
+-- Dependencies: 224
 -- Name: comentario_publi_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -176,7 +161,9 @@ CREATE TABLE public.pokemon (
     altura numeric,
     peso numeric,
     genero_m boolean NOT NULL,
-    genero_f boolean NOT NULL
+    genero_f boolean NOT NULL,
+    quantidade bigint,
+    foto character varying
 );
 
 
@@ -198,7 +185,7 @@ CREATE SEQUENCE public.pokemon_id_seq
 ALTER SEQUENCE public.pokemon_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4939 (class 0 OID 0)
+-- TOC entry 4960 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: pokemon_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -207,7 +194,7 @@ ALTER SEQUENCE public.pokemon_id_seq OWNED BY public.pokemon.id;
 
 
 --
--- TOC entry 224 (class 1259 OID 16426)
+-- TOC entry 223 (class 1259 OID 16426)
 -- Name: publicacao; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -223,7 +210,7 @@ CREATE TABLE public.publicacao (
 ALTER TABLE public.publicacao OWNER TO postgres;
 
 --
--- TOC entry 223 (class 1259 OID 16425)
+-- TOC entry 222 (class 1259 OID 16425)
 -- Name: publicacao_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -238,8 +225,8 @@ CREATE SEQUENCE public.publicacao_id_seq
 ALTER SEQUENCE public.publicacao_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4940 (class 0 OID 0)
--- Dependencies: 223
+-- TOC entry 4961 (class 0 OID 0)
+-- Dependencies: 222
 -- Name: publicacao_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -247,7 +234,44 @@ ALTER SEQUENCE public.publicacao_id_seq OWNED BY public.publicacao.id;
 
 
 --
--- TOC entry 228 (class 1259 OID 16444)
+-- TOC entry 230 (class 1259 OID 16462)
+-- Name: tipo; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipo (
+    id bigint NOT NULL,
+    nome character varying
+);
+
+
+ALTER TABLE public.tipo OWNER TO postgres;
+
+--
+-- TOC entry 229 (class 1259 OID 16461)
+-- Name: tipo_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipo_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tipo_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4962 (class 0 OID 0)
+-- Dependencies: 229
+-- Name: tipo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipo_id_seq OWNED BY public.tipo.id;
+
+
+--
+-- TOC entry 227 (class 1259 OID 16444)
 -- Name: venda; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -263,7 +287,7 @@ CREATE TABLE public.venda (
 ALTER TABLE public.venda OWNER TO postgres;
 
 --
--- TOC entry 227 (class 1259 OID 16443)
+-- TOC entry 226 (class 1259 OID 16443)
 -- Name: venda_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -278,8 +302,8 @@ CREATE SEQUENCE public.venda_id_seq
 ALTER SEQUENCE public.venda_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4941 (class 0 OID 0)
--- Dependencies: 227
+-- TOC entry 4963 (class 0 OID 0)
+-- Dependencies: 226
 -- Name: venda_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -287,15 +311,15 @@ ALTER SEQUENCE public.venda_id_seq OWNED BY public.venda.id;
 
 
 --
--- TOC entry 4769 (class 2604 OID 16420)
+-- TOC entry 4774 (class 2604 OID 16453)
 -- Name: cliente id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.cliente ALTER COLUMN id SET DEFAULT nextval('public.client_id_seq'::regclass);
+ALTER TABLE ONLY public.cliente ALTER COLUMN id SET DEFAULT nextval('public.cliente_id_seq'::regclass);
 
 
 --
--- TOC entry 4768 (class 2604 OID 16411)
+-- TOC entry 4773 (class 2604 OID 16411)
 -- Name: comentario_poke id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -303,7 +327,7 @@ ALTER TABLE ONLY public.comentario_poke ALTER COLUMN id SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 4771 (class 2604 OID 16438)
+-- TOC entry 4776 (class 2604 OID 16438)
 -- Name: comentario_publi id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -311,7 +335,7 @@ ALTER TABLE ONLY public.comentario_publi ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 4767 (class 2604 OID 16402)
+-- TOC entry 4772 (class 2604 OID 16402)
 -- Name: pokemon id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -319,7 +343,7 @@ ALTER TABLE ONLY public.pokemon ALTER COLUMN id SET DEFAULT nextval('public.poke
 
 
 --
--- TOC entry 4770 (class 2604 OID 16429)
+-- TOC entry 4775 (class 2604 OID 16429)
 -- Name: publicacao id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -327,7 +351,15 @@ ALTER TABLE ONLY public.publicacao ALTER COLUMN id SET DEFAULT nextval('public.p
 
 
 --
--- TOC entry 4772 (class 2604 OID 16447)
+-- TOC entry 4778 (class 2604 OID 16465)
+-- Name: tipo id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo ALTER COLUMN id SET DEFAULT nextval('public.tipo_id_seq'::regclass);
+
+
+--
+-- TOC entry 4777 (class 2604 OID 16447)
 -- Name: venda id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -335,16 +367,162 @@ ALTER TABLE ONLY public.venda ALTER COLUMN id SET DEFAULT nextval('public.venda_
 
 
 --
--- TOC entry 4778 (class 2606 OID 16424)
--- Name: cliente client_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 4942 (class 0 OID 16417)
+-- Dependencies: 221
+-- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.cliente (nome, endereco, cpf, id, admin, email, login, senha) FROM stdin;
+testando	testando123	\N	2	f	thebesttigerforyou@gmail.com	teste123	123456
+Gui	naosei	\N	3	f	gui@gmail.com	Gui	123
+Kon o tigre	123	\N	1	t	levigomessg@gmail.com	levi	123
+douglaslevi	123	\N	4	f	levigomessg@gmail.com	kon	123
+\.
+
+
+--
+-- TOC entry 4941 (class 0 OID 16408)
+-- Dependencies: 220
+-- Data for Name: comentario_poke; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.comentario_poke (id, data, conteudo, id_pokemon, id_cliente) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4946 (class 0 OID 16435)
+-- Dependencies: 225
+-- Data for Name: comentario_publi; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.comentario_publi (id, data, publicacao_id, conteudo) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4939 (class 0 OID 16399)
+-- Dependencies: 218
+-- Data for Name: pokemon; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.pokemon (id, nome, preco, tipo_1, tipo_2, avaliacao, descricao, altura, peso, genero_m, genero_f, quantidade, foto) FROM stdin;
+7	Golduck	350	2	3	5	golduck	1.76	30	t	f	4	\N
+14	Mewtwo	6000	2	3	5	Ele Ã© um mewtwo muito forte	1.8	250	t	f	1	\N
+15	Pikachu	500	5	6	5	AAAA	60	20	t	f	13	\N
+\.
+
+
+--
+-- TOC entry 4944 (class 0 OID 16426)
+-- Dependencies: 223
+-- Data for Name: publicacao; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.publicacao (id, foto, texto, data, cliente_id) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4951 (class 0 OID 16462)
+-- Dependencies: 230
+-- Data for Name: tipo; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.tipo (id, nome) FROM stdin;
+1	\N
+3	Agua
+4	Dragao
+5	Raio
+6	Trovao
+7	Voador
+\.
+
+
+--
+-- TOC entry 4948 (class 0 OID 16444)
+-- Dependencies: 227
+-- Data for Name: venda; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.venda (id, localentrega, data, cliente_id, pokemon_id) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4964 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: cliente_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cliente_id_seq', 4, true);
+
+
+--
+-- TOC entry 4965 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: comentario_poke_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comentario_poke_id_seq', 1, false);
+
+
+--
+-- TOC entry 4966 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: comentario_publi_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.comentario_publi_id_seq', 1, false);
+
+
+--
+-- TOC entry 4967 (class 0 OID 0)
+-- Dependencies: 217
+-- Name: pokemon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.pokemon_id_seq', 15, true);
+
+
+--
+-- TOC entry 4968 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: publicacao_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.publicacao_id_seq', 1, false);
+
+
+--
+-- TOC entry 4969 (class 0 OID 0)
+-- Dependencies: 229
+-- Name: tipo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipo_id_seq', 7, true);
+
+
+--
+-- TOC entry 4970 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: venda_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.venda_id_seq', 1, false);
+
+
+--
+-- TOC entry 4784 (class 2606 OID 16460)
+-- Name: cliente cliente_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.cliente
-    ADD CONSTRAINT client_pkey PRIMARY KEY (id);
+    ADD CONSTRAINT cliente_pkey PRIMARY KEY (id);
 
 
 --
--- TOC entry 4776 (class 2606 OID 16415)
+-- TOC entry 4782 (class 2606 OID 16415)
 -- Name: comentario_poke comentario_poke_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -353,7 +531,7 @@ ALTER TABLE ONLY public.comentario_poke
 
 
 --
--- TOC entry 4782 (class 2606 OID 16442)
+-- TOC entry 4788 (class 2606 OID 16442)
 -- Name: comentario_publi comentario_publi_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -362,7 +540,7 @@ ALTER TABLE ONLY public.comentario_publi
 
 
 --
--- TOC entry 4774 (class 2606 OID 16406)
+-- TOC entry 4780 (class 2606 OID 16406)
 -- Name: pokemon pokemon_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -371,7 +549,7 @@ ALTER TABLE ONLY public.pokemon
 
 
 --
--- TOC entry 4780 (class 2606 OID 16433)
+-- TOC entry 4786 (class 2606 OID 16433)
 -- Name: publicacao publicacao_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -380,7 +558,16 @@ ALTER TABLE ONLY public.publicacao
 
 
 --
--- TOC entry 4784 (class 2606 OID 16451)
+-- TOC entry 4792 (class 2606 OID 16469)
+-- Name: tipo tipo_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo
+    ADD CONSTRAINT tipo_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4790 (class 2606 OID 16451)
 -- Name: venda venda_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -388,7 +575,7 @@ ALTER TABLE ONLY public.venda
     ADD CONSTRAINT venda_pkey PRIMARY KEY (id);
 
 
--- Completed on 2025-05-19 09:43:21
+-- Completed on 2025-07-29 23:04:36
 
 --
 -- PostgreSQL database dump complete
